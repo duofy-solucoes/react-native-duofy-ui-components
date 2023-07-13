@@ -10,6 +10,7 @@ type TextType = {
   color?: string;
   weight?: string;
   customClasses?: string;
+  customStyles?: object;
 } & TextProps;
 
 export default function TextComponent(props: TextType) {
@@ -21,6 +22,7 @@ export default function TextComponent(props: TextType) {
     opacity,
     color,
     customClasses = '',
+    customStyles = {},
     ...rest
   } = props;
 
@@ -34,7 +36,7 @@ export default function TextComponent(props: TextType) {
   });
 
   return (
-    <Text testID="text-component" {...rest} style={style?.base}>
+    <Text testID="text-component" {...rest} style={[style?.base, customStyles]}>
       {text}
     </Text>
   );
