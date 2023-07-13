@@ -10,7 +10,7 @@ export const getStyles = ({onError, isValid, isActive}: any) => {
   `;
 
   const caption = tw`
-    mt-3
+    mt-2
   `;
 
   const container = tw`

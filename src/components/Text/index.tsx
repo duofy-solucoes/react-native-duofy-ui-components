@@ -23,6 +23,7 @@ export default function TextComponent(props: TextType) {
     color,
     customClasses = '',
     customStyles = {},
+    testID,
     ...rest
   } = props;
 
@@ -36,7 +37,10 @@ export default function TextComponent(props: TextType) {
   });
 
   return (
-    <Text testID="text-component" {...rest} style={[style?.base, customStyles]}>
+    <Text
+      testID={testID || 'text-component'}
+      {...rest}
+      style={[style?.base, customStyles]}>
       {text}
     </Text>
   );

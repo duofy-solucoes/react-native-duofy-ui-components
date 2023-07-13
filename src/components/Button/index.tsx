@@ -10,11 +10,14 @@ type ButtonType = {
 } & TouchableOpacityProps;
 
 export default function Button(props: ButtonType) {
-  const {text, variant = 'primary', ...rest} = props;
+  const {text, variant = 'primary', testID, ...rest} = props;
   const style = getStyles({variant});
 
   return (
-    <TouchableOpacity testID="button-component" {...rest} style={style.base}>
+    <TouchableOpacity
+      {...rest}
+      testID={testID || 'button-component'}
+      style={style.base}>
       <Text
         color={style.textColor}
         weight="medium"

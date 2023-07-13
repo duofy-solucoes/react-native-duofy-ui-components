@@ -41,6 +41,7 @@ export default function InputComponent(props: TextInputType) {
     pattern,
     label,
     caption,
+    testID,
     ...rest
   } = props;
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -74,7 +75,7 @@ export default function InputComponent(props: TextInputType) {
   };
 
   return (
-    <View style={style.inputContainer}>
+    <View testID={testID || 'input-component'} style={style.inputContainer}>
       {label && (
         <Text
           customStyles={style.label}
@@ -114,7 +115,7 @@ export default function InputComponent(props: TextInputType) {
       </View>
       {caption && (
         <Text
-          customStyles={style.label}
+          customStyles={style.caption}
           text={caption}
           weight="regular"
           size="small"

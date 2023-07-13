@@ -33,6 +33,13 @@ export const withCaptionAndLabel = {
     caption: 'Text caption',
   },
 };
+export const withCaptionAndLabelOnError = {
+  args: {
+    label: 'Text label',
+    caption: 'Error message',
+    onError: true,
+  },
+};
 export const TypeMoney = {
   args: {
     type: 'money',
