@@ -1,13 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Text from '../Text';
+import {ButtonType} from './Button.type';
 import {getStyles} from './styles';
-
-type ButtonType = {
-  text: string;
-  variant?: string;
-  color?: string;
-} & TouchableOpacityProps;
 
 export default function Button(props: ButtonType) {
   const {text, variant = 'primary', ...rest} = props;

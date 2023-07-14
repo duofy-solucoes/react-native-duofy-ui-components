@@ -1,16 +1,7 @@
 import React from 'react';
-import {Text, TextProps} from 'react-native';
+import {Text} from 'react-native';
+import {TextType} from './Text.type';
 import {getStyles} from './styles';
-
-type TextType = {
-  text: string;
-  size?: string;
-  brandColor?: string;
-  opacity?: string;
-  color?: string;
-  weight?: string;
-  customClasses?: string;
-} & TextProps;
 
 export default function TextComponent(props: TextType) {
   const {

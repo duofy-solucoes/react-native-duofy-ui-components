@@ -1,5 +1,24 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
-  "include": ["./declaration.d.ts"],
-  "exclude": ["__tests__"]
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationDir": "types",
+    "sourceMap": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.test.{ts, tsx}",
+    "src/**/*.spec.{ts,tsx}",
+    "src/**/*.stories.{ts, tsx}"
+  ]
 }
