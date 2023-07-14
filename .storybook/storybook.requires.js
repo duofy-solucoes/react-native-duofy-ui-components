@@ -55,7 +55,7 @@ const getStories = () => {
     "./src/components/color.red.stories.ts": require("../src/components/color.red.stories.ts"),
     "./src/components/color.secondary-gray.stories.ts": require("../src/components/color.secondary-gray.stories.ts"),
     "./src/components/color.yellow.stories.ts": require("../src/components/color.yellow.stories.ts"),
-    "./src/components/Input/index.stories.ts": require("../src/components/Input/index.stories.ts"),
+    "./src/components/Switch/index.stories.ts": require("../src/components/Switch/index.stories.ts"),
     "./src/components/Text/index.stories.ts": require("../src/components/Text/index.stories.ts"),
   };
 };
