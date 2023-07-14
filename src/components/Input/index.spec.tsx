@@ -1,4 +1,3 @@
-/* eslint-disable dot-notation */
 /**
  * @format
  */

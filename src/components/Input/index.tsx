@@ -25,8 +25,10 @@ type TextInputType = {
   onError?: boolean;
   onIconClick?: void;
   pattern?: string | string[] | undefined;
+  mask?: string | undefined;
   moneyProperties?: {
     decimalSeparator: string;
+    precision: number;
   };
 } & TextInputProps;
 
