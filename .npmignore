@@ -1,0 +1,13 @@
+.bundle/
+.husky/
+.storybook/
+android/
+ios/
+node_modules/
+src/
+vendor/
+*.tsx
+*.ts
+*.js
+*.json
+.watchmanconfig

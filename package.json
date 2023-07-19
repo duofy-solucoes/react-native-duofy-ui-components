@@ -1,6 +1,6 @@
 {
   "name": "react-native-duofy-ui-components",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "private": false,
   "react-native-builder-bob": {
     "source": "src",
@@ -24,8 +24,7 @@
   "react-native": "src/index.ts",
   "types": "src/types.d.ts",
   "files": [
-    "lib/",
-    "src/"
+    "lib/"
   ],
   "scripts": {
     "android": "react-native run-android",
@@ -35,8 +34,8 @@
     "test": "jest",
     "storybook-generate": "sb-rn-get-stories",
     "storybook-watch": "sb-rn-watcher",
-    "_postinstall": "husky install",
-    "prepack": "pinst --disable && bob build",
+    "postinstall": "husky install",
+    "prepack": "rm -rf lib && pinst --disable && bob build",
     "postpack": "pinst --enable"
   },
   "dependencies": {
