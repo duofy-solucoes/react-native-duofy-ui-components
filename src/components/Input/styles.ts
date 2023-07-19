@@ -18,9 +18,9 @@ export const getStyles = ({onError, isValid, isActive}: any) => {
   `;
 
   const input = tw`
-    flex-1 h-12 bg-white border-black-brand-lighter border border-solid rounded-lg p-2
+    flex-1 h-12 bg-white border-brand-black-lighter border border-solid rounded-lg p-2
     ${onError || !isValid ? 'border-red-dark' : ''}
-    ${isActive && isValid && !onError ? 'border-yellow-brand-primary' : ''}
+    ${isActive && isValid && !onError ? 'border-brand-primary' : ''}
   `;
 
   const icon = tw`

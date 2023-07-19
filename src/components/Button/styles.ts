@@ -4,23 +4,23 @@ export const getStyles = ({variant}: any) => {
   const getVariant: any = {
     primary: {
       default: '',
-      bg: 'bg-yellow-brand-primary',
+      bg: 'bg-brand-primary',
       textColor: 'white',
     },
     secondary: {
       default: '',
-      bg: 'bg-yellow-brand-secondary',
+      bg: 'bg-brand-secondary',
       textColor: 'white',
     },
     outline: {
-      default: 'border-yellow-brand-primary border-solid border',
+      default: 'border-brand-primary border-solid border',
       bg: 'bg-transparent',
-      textColor: 'yellow-brand-primary ',
+      textColor: 'brand-primary ',
     },
     transparent: {
       default: 'border-0',
       bg: 'bg-transparent',
-      textColor: 'yellow-brand-primary ',
+      textColor: 'brand-primary ',
     },
   };
 

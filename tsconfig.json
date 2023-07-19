@@ -3,7 +3,7 @@
   "display": "React Native",
   "_version": "3.0.2",
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "module": "commonjs",
     "types": ["react-native", "jest"],
     "lib": [
@@ -30,7 +30,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": false,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./"
   },
   "include": ["declaration.d.ts", "src/types.d.ts"],
   "exclude": [

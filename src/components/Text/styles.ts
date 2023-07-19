@@ -18,10 +18,10 @@ export const getStyles = ({
             opacity?.toLowerCase()?.length ? `-${opacity?.toLowerCase()}` : ''
           }`
         : brandColor?.toLowerCase()?.length
-        ? `${brandColor?.toLowerCase()}-brand-${
+        ? `brand-${brandColor?.toLowerCase()}-${
             opacity?.toLowerCase()?.length ? opacity?.toLowerCase() : 'primary'
           }`
-        : 'black-primary'
+        : 'brand-black-primary'
     }
   `;
 
