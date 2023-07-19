@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, SwitchProps} from 'react-native';
 
-type SwitchType = {
+export type SwitchType = {
   disabledTrackColor?: string;
   enabledTrackColor?: string;
   enabledThumbColor?: string;

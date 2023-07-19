@@ -3,7 +3,7 @@ import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import Text from '../Text';
 import {getStyles} from './styles';
 
-type ButtonType = {
+export type ButtonType = {
   text: string;
   variant?: string;
   color?: string;

@@ -18,7 +18,7 @@ import Text from '../Text';
 import {getCustomPattern, getKeyboardType, handleValidation} from './utils';
 import {getStyles} from './styles';
 
-type TextInputType = {
+export type InputType = {
   caption?: string;
   label?: string;
   type?: string;
@@ -32,7 +32,7 @@ type TextInputType = {
   };
 } & TextInputProps;
 
-export default function InputComponent(props: TextInputType) {
+export default function InputComponent(props: InputType) {
   const {
     type = 'text',
     onError,
@@ -61,7 +61,7 @@ export default function InputComponent(props: TextInputType) {
 
   const style = getStyles({onError, isValid, isActive});
 
-  const handleChange = value => {
+  const handleChange = (value: any) => {
     setIsValid(handleValidation(value, customPattern));
     isValid && onChangeText && onChangeText(value);
   };

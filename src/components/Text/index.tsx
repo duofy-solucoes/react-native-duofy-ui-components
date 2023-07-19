@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, TextProps} from 'react-native';
 import {getStyles} from './styles';
 
-type TextType = {
+export type TextType = {
   text: string;
   size?: string;
   brandColor?: string;

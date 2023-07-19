@@ -1,7 +1,7 @@
 import tw from '../../customTW';
 
 export const getStyles = ({variant}: any) => {
-  const getVariant = {
+  const getVariant: any = {
     primary: {
       default: '',
       bg: 'bg-yellow-brand-primary',
