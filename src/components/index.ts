@@ -1,4 +1,4 @@
-export * as Button from './Button';
-export * as Input from './Input';
-export * as Switch from './Switch';
-export * as Text from './Text';
+export * from './Button';
+export * from './Input';
+export * from './Switch';
+export * from './Text';

@@ -33,7 +33,7 @@
     "skipLibCheck": true,
     "baseUrl": "./"
   },
-  "include": ["declaration.d.ts", "src/types.d.ts"],
+  "include": ["declaration.d.ts", "./src"],
   "exclude": [
     "node_modules",
     "babel.config.js",

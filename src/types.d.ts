@@ -1,4 +1,6 @@
-export {ButtonType} from './components/Button';
-export {InputType} from './components/Input';
-export {SwitchType} from './components/Switch';
-export {TextType} from './components/Text';
+import {ButtonType} from './components/Button';
+import {InputType} from './components/Input';
+import {SwitchType} from './components/Switch';
+import {TextType} from './components/Text';
+
+export {ButtonType, InputType, SwitchType, TextType};
