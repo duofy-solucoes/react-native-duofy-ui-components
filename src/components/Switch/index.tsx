@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, SwitchProps} from 'react-native';
+import { Switch, SwitchProps } from 'react-native';
 
 export type SwitchType = {
   disabledTrackColor?: string;
@@ -8,7 +8,7 @@ export type SwitchType = {
   disabledThumbColor?: string;
 } & SwitchProps;
 
-export default function SwitchComponent(props: SwitchType) {
+function SwitchComponent(props: SwitchType, switchRef: any) {
   const {
     value,
     testID,
@@ -22,10 +22,13 @@ export default function SwitchComponent(props: SwitchType) {
   return (
     <Switch
       {...rest}
+      ref={switchRef}
       testID={testID || 'switch-component'}
-      trackColor={{false: disabledTrackColor, true: enabledTrackColor}}
+      trackColor={{ false: disabledTrackColor, true: enabledTrackColor }}
       thumbColor={value ? enabledThumbColor : disabledThumbColor}
       value={value}
     />
   );
 }
+
+export default React.forwardRef<SwitchProps, SwitchType>(SwitchComponent);

@@ -1,4 +1,6 @@
+import React from 'react';
 import Input from '.';
+import { QrCodeIcon } from 'react-native-heroicons/outline';
 
 export default {
   title: 'Input',
@@ -10,6 +12,13 @@ export const Default = {};
 export const WithPlaceholder = {
   args: {
     placeholder: 'Whith placeholder',
+  },
+};
+export const newVariante = {
+  args: {
+    onError: false,
+    placeholder: 'Variante line',
+    styleInput: { borderColor: 'none' },
   },
 };
 export const onError = {
@@ -43,6 +52,7 @@ export const withCaptionAndLabelOnError = {
 export const TypeMoney = {
   args: {
     type: 'money',
+    value: 55.23,
   },
 };
 export const TypePassword = {
@@ -55,6 +65,12 @@ export const TypeSearch = {
     type: 'search',
   },
 };
+export const TypeSearchCustomIcon = {
+  args: {
+    type: 'search',
+    customIcon: <QrCodeIcon color="black" />,
+  },
+};
 export const TypeEmail = {
   args: {
     type: 'email',
@@ -63,5 +79,10 @@ export const TypeEmail = {
 export const TypeTel = {
   args: {
     type: 'tel',
+  },
+};
+export const TypeNumber = {
+  args: {
+    type: 'numeric',
   },
 };

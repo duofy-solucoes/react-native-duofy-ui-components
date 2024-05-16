@@ -1,2 +1,2 @@
-import StorybookUIRoot from './.storybook';
-export {StorybookUIRoot as default};
+import './src/extensions';
+export { default } from './.storybook';

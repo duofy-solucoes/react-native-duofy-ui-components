@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, TextProps} from 'react-native';
-import {getStyles} from './styles';
+import { Text, TextProps } from 'react-native';
+import { getStyles } from './styles';
 
 export type TextType = {
   text: string;
@@ -9,11 +9,10 @@ export type TextType = {
   opacity?: string;
   color?: string;
   weight?: string;
-  customClasses?: string;
-  customStyles?: object;
+  customTw?: string;
 } & TextProps;
 
-export default function TextComponent(props: TextType) {
+function TextComponent(props: TextType, textRef: any) {
   const {
     text,
     size = 'tiny',
@@ -21,14 +20,14 @@ export default function TextComponent(props: TextType) {
     brandColor,
     opacity,
     color,
-    customClasses = '',
-    customStyles = {},
+    customTw = '',
     testID,
+    style,
     ...rest
   } = props;
 
-  const style = getStyles({
-    customClasses,
+  const customStyles = getStyles({
+    customTw,
     size,
     weight,
     color,
@@ -38,10 +37,14 @@ export default function TextComponent(props: TextType) {
 
   return (
     <Text
-      testID={testID || 'text-component'}
       {...rest}
-      style={[style?.base, customStyles]}>
+      ref={textRef}
+      testID={testID || 'text-component'}
+      style={[customStyles?.base, style]}
+    >
       {text}
     </Text>
-  );
+  ) as any;
 }
+
+export default React.forwardRef<TextProps, TextType>(TextComponent);

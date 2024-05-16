@@ -1,29 +1,69 @@
 import React from 'react';
-import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ActivityIndicator,
+} from 'react-native';
 import Text from '../Text';
-import {getStyles} from './styles';
+import { getStyles } from './styles';
+import { CommonType } from '..';
 
 export type ButtonType = {
-  text: string;
+  text?: string;
   variant?: string;
   color?: string;
-} & TouchableOpacityProps;
+  customTw?: string;
+} & TouchableOpacityProps &
+  CommonType;
 
-export default function Button(props: ButtonType) {
-  const {text, variant = 'primary', testID, ...rest} = props;
-  const style = getStyles({variant});
+function ButtonComponent(props: ButtonType, buttonRef: any) {
+  const {
+    customTw = '',
+    variant = 'primary',
+    text,
+    testID,
+    children,
+    loading = false,
+    disabled = false,
+    style,
+    ...rest
+  } = props;
+  const customStyles = getStyles({ variant, customTw, disabled });
+
+  const renderElement = (): any => {
+    if (loading) {
+      return <ActivityIndicator color={customStyles?.textColor} />;
+    }
+    if (children !== null && children !== undefined) {
+      return children;
+    } else if (
+      (children === null || children === undefined) &&
+      text !== null &&
+      text !== undefined
+    ) {
+      return (
+        <Text
+          color={customStyles.textColor}
+          weight="medium"
+          size="regular"
+          text={text}
+        />
+      );
+    }
+    return <></>;
+  };
 
   return (
     <TouchableOpacity
       {...rest}
+      ref={buttonRef}
       testID={testID || 'button-component'}
-      style={style.base}>
-      <Text
-        color={style.textColor}
-        weight="medium"
-        size="regular"
-        text={text}
-      />
+      style={[customStyles.base, style]}
+      disabled={disabled || loading}
+    >
+      {renderElement()}
     </TouchableOpacity>
   );
 }
+
+export default React.forwardRef<TouchableOpacityProps, ButtonType>(ButtonComponent);

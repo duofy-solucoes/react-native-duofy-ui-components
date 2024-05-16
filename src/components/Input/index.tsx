@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   InputModeOptions,
   KeyboardTypeOptions,
   TextInput,
   TextInputProps,
   View,
+  ViewProps,
   TouchableOpacity,
   NativeSyntheticEvent,
   TextInputFocusEventData,
@@ -15,8 +16,8 @@ import {
   MagnifyingGlassIcon,
 } from 'react-native-heroicons/outline';
 import Text from '../Text';
-import {getCustomPattern, getKeyboardType, handleValidation} from './utils';
-import {getStyles} from './styles';
+import { getCustomPattern, getKeyboardType, handleValidation } from './utils';
+import { getStyles } from './styles';
 
 export type InputType = {
   caption?: string;
@@ -26,16 +27,18 @@ export type InputType = {
   onIconClick?: void;
   pattern?: string | string[] | undefined;
   mask?: string | undefined;
-  moneyProperties?: {
-    decimalSeparator: string;
-    precision: number;
-  };
+  customIcon?: JSX.Element;
+  moneySeparator?: boolean;
+  styleLabel?: any;
+  styleInput?: any;
+  styleContainer?: any;
 } & TextInputProps;
 
-export default function InputComponent(props: InputType) {
+function InputComponent(props: InputType, inputRef: any) {
   const {
     type = 'text',
     onError,
+    customIcon,
     onIconClick = () => {},
     onChangeText,
     onFocus,
@@ -44,26 +47,29 @@ export default function InputComponent(props: InputType) {
     label,
     caption,
     testID,
+    styleLabel = {},
+    styleInput = {},
+    styleContainer = {},
     ...rest
   } = props;
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isValid, setIsValid] = useState<boolean>(true);
   const [visiblePassword, setVisiblePassword] = useState<boolean>(false);
 
-  const {inputType, keyboardType} = getKeyboardType(type);
+  const { inputType, keyboardType } = getKeyboardType(type);
   const isPasswordField = type === 'password';
-  const isSearchField = type === 'search';
+  const isSearchField = type === 'search' || customIcon !== undefined;
   const IconActive = isPasswordField || isSearchField || false;
-  const customPattern = pattern || getCustomPattern(inputType);
+  const customPattern = pattern || getCustomPattern(inputType || type);
   const iconClickFunction = isPasswordField
     ? () => setVisiblePassword(!visiblePassword)
     : onIconClick;
 
-  const style = getStyles({onError, isValid, isActive});
+  const style = getStyles({ onError, isValid, isActive });
 
-  const handleChange = (value: any) => {
-    setIsValid(handleValidation(value, customPattern));
-    isValid && onChangeText && onChangeText(value);
+  const handleChange = (changeValue: any) => {
+    setIsValid(handleValidation(changeValue, customPattern));
+    isValid && onChangeText && onChangeText(changeValue);
   };
 
   const handleFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -80,7 +86,7 @@ export default function InputComponent(props: InputType) {
     <View testID={testID || 'input-component'} style={style.inputContainer}>
       {label && (
         <Text
-          customStyles={style.label}
+          style={[style.label, styleLabel]}
           text={label}
           weight="medium"
           size="regular"
@@ -88,11 +94,12 @@ export default function InputComponent(props: InputType) {
           opacity="primary"
         />
       )}
-      <View style={style.container}>
+      <View style={[style.container, styleContainer]}>
         <TextInput
           {...rest}
+          ref={inputRef}
           autoCapitalize="none"
-          style={style.input}
+          style={[style.input, styleInput]}
           inputMode={inputType as InputModeOptions}
           keyboardType={keyboardType as KeyboardTypeOptions}
           placeholderTextColor="rgba(13, 16, 16, .6)"
@@ -109,15 +116,16 @@ export default function InputComponent(props: InputType) {
             {isPasswordField && visiblePassword && (
               <EyeSlashIcon color="rgba(13, 16, 16, 0.4)" />
             )}
-            {isSearchField && (
+            {isSearchField && !customIcon && (
               <MagnifyingGlassIcon color="rgba(13, 16, 16, 0.4)" />
             )}
+            {isSearchField && customIcon}
           </TouchableOpacity>
         )}
       </View>
       {caption && (
         <Text
-          customStyles={style.caption}
+          style={style.caption}
           text={caption}
           weight="regular"
           size="small"
@@ -129,3 +137,7 @@ export default function InputComponent(props: InputType) {
     </View>
   );
 }
+
+export default React.forwardRef<TextInput & View, InputType & ViewProps>(
+  InputComponent
+);

@@ -47,7 +47,7 @@ try {
 
 const getStories = () => {
   return {
-    "./src/components/Button/index.stories.ts": require("../src/components/Button/index.stories.ts"),
+    "./src/components/Button/index.stories.tsx": require("../src/components/Button/index.stories.tsx"),
     "./src/components/color.black.stories.ts": require("../src/components/color.black.stories.ts"),
     "./src/components/color.blue.stories.ts": require("../src/components/color.blue.stories.ts"),
     "./src/components/color.green.stories.ts": require("../src/components/color.green.stories.ts"),
@@ -55,7 +55,12 @@ const getStories = () => {
     "./src/components/color.red.stories.ts": require("../src/components/color.red.stories.ts"),
     "./src/components/color.secondary-gray.stories.ts": require("../src/components/color.secondary-gray.stories.ts"),
     "./src/components/color.yellow.stories.ts": require("../src/components/color.yellow.stories.ts"),
-    "./src/components/Input/index.stories.ts": require("../src/components/Input/index.stories.ts"),
+    "./src/components/Container/index.stories.ts": require("../src/components/Container/index.stories.ts"),
+    "./src/components/Divider/index.stories.ts": require("../src/components/Divider/index.stories.ts"),
+    "./src/components/IncrementalInput/index.stories.tsx": require("../src/components/IncrementalInput/index.stories.tsx"),
+    "./src/components/Input/index.stories.tsx": require("../src/components/Input/index.stories.tsx"),
+    "./src/components/Modal/index.stories.ts": require("../src/components/Modal/index.stories.ts"),
+    "./src/components/ScrollableContainer/index.stories.ts": require("../src/components/ScrollableContainer/index.stories.ts"),
     "./src/components/Switch/index.stories.ts": require("../src/components/Switch/index.stories.ts"),
     "./src/components/Text/index.stories.ts": require("../src/components/Text/index.stories.ts"),
   };
