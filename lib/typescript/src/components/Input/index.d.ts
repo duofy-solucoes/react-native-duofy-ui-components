@@ -1,0 +1,31 @@
+import React from 'react';
+import { TextInput, TextInputProps, View, ViewProps } from 'react-native';
+export type InputType = {
+    caption?: string;
+    label?: string;
+    type?: string;
+    onError?: boolean;
+    onIconClick?: void;
+    pattern?: string | string[] | undefined;
+    mask?: string | undefined;
+    customIcon?: JSX.Element;
+    moneySeparator?: boolean;
+    styleLabel?: any;
+    styleInput?: any;
+    styleContainer?: any;
+} & TextInputProps;
+declare const _default: React.ForwardRefExoticComponent<{
+    caption?: string | undefined;
+    label?: string | undefined;
+    type?: string | undefined;
+    onError?: boolean | undefined;
+    onIconClick?: void | undefined;
+    pattern?: string | string[] | undefined;
+    mask?: string | undefined;
+    customIcon?: JSX.Element | undefined;
+    moneySeparator?: boolean | undefined;
+    styleLabel?: any;
+    styleInput?: any;
+    styleContainer?: any;
+} & TextInputProps & ViewProps & React.RefAttributes<TextInput & View>>;
+export default _default;
