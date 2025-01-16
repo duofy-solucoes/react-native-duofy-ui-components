@@ -6,7 +6,7 @@ declare const _default: {
         open: boolean;
         closeFunction: () => void;
         customTw?: string | undefined;
-    } & import("react-native").ModalBaseProps & import("react-native").ModalPropsIOS & import("react-native").ModalPropsAndroid & import("react-native").ViewProps & import("react").RefAttributes<import("react-native").ModalProps>>;
+    } & import("react-native/types").ModalBaseProps & import("react-native/types").ModalPropsIOS & import("react-native/types").ModalPropsAndroid & import("react-native/types").ViewProps & import("react").RefAttributes<import("react-native/types").ModalProps>>;
     args: {
         title: string;
         open: boolean;

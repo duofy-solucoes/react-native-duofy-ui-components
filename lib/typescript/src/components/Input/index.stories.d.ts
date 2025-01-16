@@ -14,7 +14,7 @@ declare const _default: {
         styleLabel?: any;
         styleInput?: any;
         styleContainer?: any;
-    } & import("react-native").TextInputProps & import("react-native").ViewProps & React.RefAttributes<import("react-native").TextInput & import("react-native").View>>;
+    } & import("react-native/types").TextInputProps & import("react-native/types").ViewProps & React.RefAttributes<import("react-native/types").TextInput & import("react-native/types").View>>;
     args: {};
 };
 export default _default;

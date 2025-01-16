@@ -6,7 +6,7 @@ declare const _default: {
         enabledTrackColor?: string | undefined;
         enabledThumbColor?: string | undefined;
         disabledThumbColor?: string | undefined;
-    } & import("react-native").SwitchProps & import("react").RefAttributes<import("react-native").SwitchProps>>;
+    } & import("react-native/types").SwitchProps & import("react").RefAttributes<import("react-native/types").SwitchProps>>;
     args: {};
 };
 export default _default;

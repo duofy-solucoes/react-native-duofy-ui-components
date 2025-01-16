@@ -1,4 +1,4 @@
 export declare const getStyles: ({ variant, customTw, disabled }: any) => {
-    base: import("twrnc/dist/esm/types").Style;
+    base: import("twrnc").Style;
     textColor: any;
 };

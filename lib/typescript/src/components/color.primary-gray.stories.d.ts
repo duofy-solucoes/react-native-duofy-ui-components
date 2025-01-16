@@ -9,7 +9,7 @@ declare const _default: {
         color?: string | undefined;
         weight?: string | undefined;
         customTw?: string | undefined;
-    } & import("react-native").TextProps & import("react").RefAttributes<import("react-native").TextProps>>;
+    } & import("react-native/types").TextProps & import("react").RefAttributes<import("react-native/types").TextProps>>;
     args: {
         text: string;
         size: string;

@@ -1,8 +1,8 @@
 export declare const getStyles: ({ onError, isValid, isActive }: any) => {
-    inputContainer: import("twrnc/dist/esm/types").Style;
-    label: import("twrnc/dist/esm/types").Style;
-    caption: import("twrnc/dist/esm/types").Style;
-    container: import("twrnc/dist/esm/types").Style;
-    input: import("twrnc/dist/esm/types").Style;
-    icon: import("twrnc/dist/esm/types").Style;
+    inputContainer: import("twrnc").Style;
+    label: import("twrnc").Style;
+    caption: import("twrnc").Style;
+    container: import("twrnc").Style;
+    input: import("twrnc").Style;
+    icon: import("twrnc").Style;
 };
